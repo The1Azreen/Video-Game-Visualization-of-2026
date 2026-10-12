@@ -1,0 +1,61 @@
+{
+  "domain": "context",
+  "notes": "Long-run context transcribed from Matthew Ball / Epyllion, 'The State of Video Gaming in 2025' (deck last updated Feb 27, 2026). Values are the labels printed on each slide unless the note says otherwise.",
+  "observations": [
+    { "metric": "growth_since_2011", "entity": "Mobile", "period": "2011-2024", "value": 83, "unit": "USD B", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 29. Mobile is ~70% of new spend since 2011 and 58% of the market (up from 32%)." },
+    { "metric": "growth_since_2011", "entity": "PC", "period": "2011-2024", "value": 20, "unit": "USD B", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 29." },
+    { "metric": "growth_since_2011", "entity": "Console", "period": "2011-2024", "value": 15, "unit": "USD B", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 29. Living-room consoles incl. Switch." },
+    { "metric": "growth_since_2011", "entity": "VR", "period": "2011-2024", "value": 1, "unit": "USD B", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 29." },
+    { "metric": "growth_since_2011", "entity": "Arcade", "period": "2011-2024", "value": -2, "unit": "USD B", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 29." },
+    { "metric": "growth_since_2011", "entity": "Handheld", "period": "2011-2024", "value": -9, "unit": "USD B", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 29. Dedicated handhelds (DS, PSP, etc.)." },
+
+    { "metric": "real_content_spend", "entity": "Global", "period": "2006", "value": 110, "unit": "USD B (2024 prices)", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 10." },
+    { "metric": "real_content_spend", "entity": "Global", "period": "2021", "value": 218, "unit": "USD B (2024 prices)", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 10. Pandemic peak." },
+    { "metric": "real_content_spend", "entity": "Global", "period": "2024", "value": 187, "unit": "USD B (2024 prices)", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 10. Down ~14% in real terms since 2021." },
+
+    { "metric": "steam_playtime_share", "entity": "Released that year", "period": "2022", "value": 17, "unit": "%", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 101." },
+    { "metric": "steam_playtime_share", "entity": "1-7 years old", "period": "2022", "value": 19, "unit": "%", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 101." },
+    { "metric": "steam_playtime_share", "entity": "8+ years old", "period": "2022", "value": 40, "unit": "%", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 101." },
+    { "metric": "steam_playtime_share", "entity": "Valve first-party", "period": "2022", "value": 24, "unit": "%", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 101. Counter-Strike, Dota 2, etc." },
+    { "metric": "steam_playtime_share", "entity": "Released that year", "period": "2023", "value": 9, "unit": "%", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 101." },
+    { "metric": "steam_playtime_share", "entity": "1-7 years old", "period": "2023", "value": 52, "unit": "%", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 101." },
+    { "metric": "steam_playtime_share", "entity": "8+ years old", "period": "2023", "value": 12, "unit": "%", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 101." },
+    { "metric": "steam_playtime_share", "entity": "Valve first-party", "period": "2023", "value": 26, "unit": "%", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 101." },
+    { "metric": "steam_playtime_share", "entity": "Released that year", "period": "2024", "value": 15, "unit": "%", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 101." },
+    { "metric": "steam_playtime_share", "entity": "1-7 years old", "period": "2024", "value": 47, "unit": "%", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 101." },
+    { "metric": "steam_playtime_share", "entity": "8+ years old", "period": "2024", "value": 15, "unit": "%", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 101." },
+    { "metric": "steam_playtime_share", "entity": "Valve first-party", "period": "2024", "value": 22, "unit": "%", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 101." },
+
+    { "metric": "steam_releases", "entity": "Steam", "period": "2016", "value": 4700, "unit": "games", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 102." },
+    { "metric": "steam_releases", "entity": "Steam", "period": "2017", "value": 7000, "unit": "games", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 102." },
+    { "metric": "steam_releases", "entity": "Steam", "period": "2018", "value": 8900, "unit": "games", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 102." },
+    { "metric": "steam_releases", "entity": "Steam", "period": "2019", "value": 8100, "unit": "games", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 102." },
+    { "metric": "steam_releases", "entity": "Steam", "period": "2020", "value": 9700, "unit": "games", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 102." },
+    { "metric": "steam_releases", "entity": "Steam", "period": "2021", "value": 11300, "unit": "games", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 102." },
+    { "metric": "steam_releases", "entity": "Steam", "period": "2022", "value": 12400, "unit": "games", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 102." },
+    { "metric": "steam_releases", "entity": "Steam", "period": "2023", "value": 14300, "unit": "games", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 102." },
+    { "metric": "steam_releases", "entity": "Steam", "period": "2024", "value": 19000, "unit": "games", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 102. Top 10 releases took ~60% of new-game sales." },
+
+    { "metric": "steam_games_per_mau", "entity": "Steam", "period": "2018", "value": 6.1, "unit": "games", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 100. Bought or installed per monthly active user." },
+    { "metric": "steam_games_per_mau", "entity": "Steam", "period": "2019", "value": 4.3, "unit": "games", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 100." },
+    { "metric": "steam_games_per_mau", "entity": "Steam", "period": "2020", "value": 5.0, "unit": "games", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 100." },
+    { "metric": "steam_games_per_mau", "entity": "Steam", "period": "2021", "value": 4.6, "unit": "games", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 100." },
+    { "metric": "steam_games_per_mau", "entity": "Steam", "period": "2022", "value": 3.7, "unit": "games", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 100." },
+    { "metric": "steam_games_per_mau", "entity": "Steam", "period": "2023", "value": 3.6, "unit": "games", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 100." },
+    { "metric": "steam_games_per_mau", "entity": "Steam", "period": "2024", "value": 3.9, "unit": "games", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 100." },
+
+    { "metric": "playtime_share_2023", "entity": "Live-service games from before 2019", "period": "2023", "value": 60, "unit": "%", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 105. e.g. Fortnite, GTA V. PC + PlayStation/Xbox, 37 markets excl. India & China." },
+    { "metric": "playtime_share_2023", "entity": "Games released 2019-2021", "period": "2023", "value": 16, "unit": "%", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 105. e.g. Apex Legends, Valorant." },
+    { "metric": "playtime_share_2023", "entity": "Annual updates to pre-2019 series", "period": "2023", "value": 15, "unit": "%", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 105. e.g. EA FC, Call of Duty." },
+    { "metric": "playtime_share_2023", "entity": "New games released in 2023", "period": "2023", "value": 6.5, "unit": "%", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 105. Excludes annual releases, includes sequels like Spider-Man 2." },
+    { "metric": "playtime_share_2023", "entity": "Games released 2022", "period": "2023", "value": 2.5, "unit": "%", "sourceId": "ball-2025", "confidence": "derived", "note": "Slide 105 leaves this slice unlabeled: 100% minus the four labeled slices." },
+
+    { "metric": "monthly_hours", "entity": "Roblox", "period": "2024", "value": 6.1, "unit": "B hours", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 140, read from chart gridlines (bars unlabeled). 2024 average." },
+    { "metric": "monthly_hours", "entity": "Steam", "period": "2024", "value": 5.0, "unit": "B hours", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 140, read from chart gridlines. 2024 average." },
+    { "metric": "monthly_hours", "entity": "PlayStation", "period": "2023", "value": 4.1, "unit": "B hours", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 140, read from chart gridlines. 2023 average." },
+    { "metric": "monthly_hours", "entity": "Twitch", "period": "2024", "value": 1.7, "unit": "B hours", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 140, read from chart gridlines." },
+    { "metric": "monthly_hours", "entity": "Fortnite", "period": "2024", "value": 1.2, "unit": "B hours", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 140, read from chart gridlines." },
+    { "metric": "monthly_hours", "entity": "Electronic Arts", "period": "2024", "value": 0.9, "unit": "B hours", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 140, read from chart gridlines." },
+    { "metric": "monthly_hours", "entity": "Blizzard", "period": "2024", "value": 0.7, "unit": "B hours", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 140, read from chart gridlines." }
+  ]
+}

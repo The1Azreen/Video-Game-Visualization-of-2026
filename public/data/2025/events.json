@@ -1,0 +1,13 @@
+{
+  "domain": "events",
+  "events": [
+    { "date": "2025-03-02", "category": "platform", "title": "Steam passes 40M concurrent users for the first time", "sourceId": "steam-40m" },
+    { "date": "2025-05-01", "category": "pricing", "title": "Xbox raises console prices (first 2025 increase)", "sourceId": "xbox-price-2025" },
+    { "date": "2025-06-05", "category": "platform", "title": "Nintendo Switch 2 launches; 5.82M shipped by June 30", "sourceId": "nintendo-fy26q3" },
+    { "date": "2025-07-02", "category": "jobs", "title": "Microsoft cuts ~9,000 jobs company-wide; The Initiative closed, Perfect Dark and Everwild cancelled", "sourceId": "ms-layoffs-2025" },
+    { "date": "2025-08-21", "category": "pricing", "title": "PS5 US prices rise $50 (PS5 $549.99, Digital $499.99, Pro $749.99)", "sourceId": "ps5-price-2025" },
+    { "date": "2025-09-29", "category": "deals", "title": "EA agrees to $55B take-private by PIF, Silver Lake and Affinity Partners", "sourceId": "ea-pif" },
+    { "date": "2025-10", "category": "pricing", "title": "Second Xbox price increase; Series X 1TB reaches $649.99", "sourceId": "xbox-price-2025" },
+    { "date": "2025-12", "category": "platform", "title": "PS5 ships 8.0M in Oct-Dec, ahead of Switch 2 (7.01M) for the quarter", "sourceId": "sony-fy25q3" }
+  ]
+}

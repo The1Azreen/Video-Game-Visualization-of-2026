@@ -1,0 +1,15 @@
+{
+  "domain": "jobs",
+  "notes": "Layoff totals differ by tracker methodology (announced cuts vs. surveyed estimates). Both trackers are shown rather than picking one.",
+  "observations": [
+    { "metric": "layoffs", "entity": "Satvat tracker", "period": "2024", "value": 15631, "unit": "people", "sourceId": "satvat-2025", "confidence": "estimate" },
+    { "metric": "layoffs", "entity": "Satvat tracker", "period": "2025", "value": 9053, "unit": "people", "sourceId": "satvat-2025", "confidence": "estimate" },
+    { "metric": "layoffs", "entity": "Ball / Epyllion", "period": "2022", "value": 8500, "unit": "people", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 17. Gross reported layoffs (Farhan Noor, Amir Satvat); then an all-time high." },
+    { "metric": "layoffs", "entity": "Ball / Epyllion", "period": "2023", "value": 10500, "unit": "people", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 17. New all-time high." },
+    { "metric": "layoffs", "entity": "Ball / Epyllion", "period": "2024", "value": 15650, "unit": "people", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 17. New all-time high." },
+    { "metric": "layoffs", "entity": "Ball / Epyllion", "period": "2025", "value": 9200, "unit": "people", "sourceId": "ball-2026", "confidence": "estimate", "note": "About 40% fewer than 2024." },
+    { "metric": "layoffs_cumulative", "entity": "Ball / Epyllion", "period": "2022-2025", "value": 44000, "unit": "people", "sourceId": "ball-2026", "confidence": "estimate", "note": "Nearly half were in California." },
+    { "metric": "private_funding_yoy_pct", "entity": "Global", "period": "2025", "value": -55, "unit": "%", "sourceId": "ball-2026", "confidence": "estimate" },
+    { "metric": "outsourcing_share_pct", "entity": "Global", "period": "2025", "value": 35.5, "unit": "%", "sourceId": "ball-2026", "confidence": "estimate", "note": "Share of developers' content-creation spend going to outsourcers." }
+  ]
+}

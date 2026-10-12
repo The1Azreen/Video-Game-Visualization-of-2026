@@ -1,0 +1,201 @@
+{
+  "sources": [
+    {
+      "id": "nintendo-fy26q3",
+      "publisher": "Nintendo IR",
+      "title": "Earnings release presentation, nine months ended Dec 31, 2025",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2026/260203_2e.pdf",
+      "published": "2026-02-03",
+      "kind": "primary"
+    },
+    {
+      "id": "sony-fy25q3",
+      "publisher": "GIGAZINE (Sony FY25 Q3 results)",
+      "title": "Sony financial results, Oct–Dec 2025",
+      "url": "https://www.gigazine.net/gsc_news/en/20260206-sony-financial-results/",
+      "published": "2026-02-06",
+      "kind": "secondary"
+    },
+    {
+      "id": "sony-fy25q1",
+      "publisher": "GIGAZINE (Sony FY25 Q1 results)",
+      "title": "PS5 sales Apr–Jun 2025",
+      "url": "https://www.gigazine.net/gsc_news/en/20250808-sony-playstation-5-2025q1/",
+      "published": "2025-08-08",
+      "kind": "secondary"
+    },
+    {
+      "id": "sony-ytd-fy25q3",
+      "publisher": "OneMoreGame (Sony FY25 Q3 results)",
+      "title": "PS5 shipments surpass 92 million",
+      "url": "https://onemoregame.ph/2026/02/ps5-shipments-surpass-92-million-sony-2026/",
+      "published": "2026-02",
+      "kind": "secondary",
+      "note": "Source of 14.4M FY25 Q1–Q3 YTD, used to derive Jul–Sep 2025."
+    },
+    {
+      "id": "sony-fy25q4",
+      "publisher": "Shacknews (Sony FY25 results)",
+      "title": "Sony has sold over 93 million PS5 consoles since launch",
+      "url": "https://www.shacknews.com/article/149052/sony-ps5-fy25-hardware-sales",
+      "published": "2026-05",
+      "kind": "secondary"
+    },
+    {
+      "id": "sony-digital",
+      "publisher": "CoopBoardGames (compiling Sony supplemental data)",
+      "title": "PlayStation Store digital sales statistics",
+      "url": "https://coopboardgames.com/statistics/playstation-store-digital-sales/",
+      "published": "2026",
+      "kind": "secondary",
+      "note": "Full-game software download ratio per Sony fiscal quarter; verify against Sony supplemental PDFs."
+    },
+    {
+      "id": "sony-fy24",
+      "publisher": "Notebookcheck (Sony FY24 results)",
+      "title": "PS5 shipments reach 77.8 million units",
+      "url": "https://www.notebookcheck.net/PS5-shipments-reach-77-8-million-units-software-and-network-services-surge-in-FY2024.1015901.0.html",
+      "published": "2025-05",
+      "kind": "secondary"
+    },
+    {
+      "id": "ms-fy25q3",
+      "publisher": "Pure Xbox (Microsoft FY25 Q3)",
+      "title": "Xbox content & services revenue grows 8%",
+      "url": "https://www.purexbox.com/news/2025/05/xbox-achieves-record-breaking-results-in-latest-earnings-report",
+      "published": "2025-04-30",
+      "kind": "secondary"
+    },
+    {
+      "id": "ms-fy25q4",
+      "publisher": "GamesMarket (Microsoft FY25 Q4)",
+      "title": "Microsoft Gaming revenue in Q4 FY25 exceeds expectations",
+      "url": "https://www.gamesmarket.global/microsoft-gaming-xbox-revenue-in-q4-fy25-exceeds-expectations-f333bac87614606fe3e03b81ba5fb092",
+      "published": "2025-07-30",
+      "kind": "secondary"
+    },
+    {
+      "id": "ms-fy25q4-hw",
+      "publisher": "Shacknews (Microsoft FY25 Q4)",
+      "title": "Xbox hardware revenue fell 22%",
+      "url": "https://www.shacknews.com/article/145315/xbox-hardware-revenue-q4-2025",
+      "published": "2025-07-30",
+      "kind": "secondary"
+    },
+    {
+      "id": "ms-fy26q1",
+      "publisher": "Windows Central (Microsoft FY26 Q1)",
+      "title": "Xbox FY26 Q1 earnings",
+      "url": "https://www.windowscentral.com/gaming/xbox/xbox-fy26-q1-earnings",
+      "published": "2025-10-29",
+      "kind": "secondary"
+    },
+    {
+      "id": "ms-fy26q2",
+      "publisher": "Microsoft Investor Relations",
+      "title": "FY26 Q2 press release",
+      "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q2/press-release-webcast",
+      "published": "2026-01-28",
+      "kind": "primary"
+    },
+    {
+      "id": "ms-fy26q2-hw",
+      "publisher": "Wccftech (Microsoft FY26 Q2)",
+      "title": "Xbox revenue down 9%, hardware down 32%",
+      "url": "https://wccftech.com/microsoft-reports-a-9-overall-drop-in-xbox-revenue-for-q2-fy26-hardware-down-32/",
+      "published": "2026-01-28",
+      "kind": "secondary"
+    },
+    {
+      "id": "esa-us-2025",
+      "publisher": "ESA / Circana / Sensor Tower",
+      "title": "2025 U.S. consumer spending on video games ($60.8B, revised)",
+      "url": "https://www.theesa.com/2025-u-s-consumer-spending-on-video-games-nears-pandemic-level-peak-at-60-7-billion-second-highest-on-record/",
+      "published": "2026-02-11",
+      "kind": "primary",
+      "note": "Restated March 2026: total $60.8B, content $52.4B."
+    },
+    {
+      "id": "circana-physical",
+      "publisher": "Push Square (Circana data)",
+      "title": "Physical game sales hit all-time low in the US",
+      "url": "https://www.pushsquare.com/news/2026/03/physical-game-sales-hit-all-time-low-in-the-us",
+      "published": "2026-03",
+      "kind": "secondary"
+    },
+    {
+      "id": "ball-2026",
+      "publisher": "Matthew Ball / Epyllion",
+      "title": "The State of Video Gaming in 2026 (covers full-year 2025)",
+      "url": "https://www.matthewball.co/all/presentation-the-state-of-video-gaming-in-2026",
+      "published": "2026-02",
+      "kind": "primary",
+      "note": "Deck is image-only; figures transcribed via WN Hub coverage: https://wnhub.io/news/finance/item-50148"
+    },
+    {
+      "id": "ball-2025",
+      "publisher": "Matthew Ball / Epyllion",
+      "title": "The State of Video Gaming in 2025 (231 slides; last updated Feb 27, 2026)",
+      "url": "https://www.matthewball.co/all/stateofvideogaming2025",
+      "published": "2026-02-27",
+      "kind": "primary",
+      "note": "Slide images read via Issuu (issuu.com/ballmatthew/docs/the_state_of_video_gaming_in_2025_epyllion_matt). Slide numbers are given in each data point's note."
+    },
+    {
+      "id": "satvat-2025",
+      "publisher": "GamesBeat (Amir Satvat)",
+      "title": "Gaming layoffs slowed from 15,631 in 2024 to 9,053 in 2025",
+      "url": "https://gamesbeat.com/?p=313759",
+      "published": "2026-01",
+      "kind": "secondary"
+    },
+    {
+      "id": "ms-layoffs-2025",
+      "publisher": "Insider Gaming",
+      "title": "All Xbox July 2025 layoffs and cancelled games",
+      "url": "https://insider-gaming.com/microsoft-layoffs-explained-all-xbox-july-2025-layoffs-and-cancelled-games/",
+      "published": "2025-07",
+      "kind": "secondary"
+    },
+    {
+      "id": "ps5-price-2025",
+      "publisher": "The Outerhaven",
+      "title": "PlayStation 5 US price increase, August 2025",
+      "url": "https://www.theouterhaven.net/playstation-5-us-price-increase-august-2025/",
+      "published": "2025-08",
+      "kind": "secondary"
+    },
+    {
+      "id": "xbox-price-2025",
+      "publisher": "Game Informer",
+      "title": "Xbox console prices will increase again next month",
+      "url": "https://gameinformer.com/2025/09/19/xbox-console-prices-will-increase-again-next-month",
+      "published": "2025-09-19",
+      "kind": "secondary"
+    },
+    {
+      "id": "ea-pif",
+      "publisher": "PIF newswire",
+      "title": "EA to be acquired by PIF, Silver Lake and Affinity Partners for $55B",
+      "url": "https://www.pif.gov.sa/en/news-and-insights/newswire/2025/ea-announces-agreement-to-be-acquired-by-pif-silver-lake-and-affinity-partners-for-55-billion-usd/",
+      "published": "2025-09-29",
+      "kind": "primary"
+    },
+    {
+      "id": "steam-40m",
+      "publisher": "Mezha (SteamDB data)",
+      "title": "Steam online reaches 40 million users for the first time",
+      "url": "https://mezha.ua/en/news/steam-online-reaches-40-million-users-for-the-first-time-300183/",
+      "published": "2025-03",
+      "kind": "secondary"
+    },
+    {
+      "id": "steam-41m",
+      "publisher": "Gamereactor (SteamDB data)",
+      "title": "Steam sets another all-time concurrent user record",
+      "url": "https://www.gamereactor.eu/steam-sets-another-all-time-concurrent-user-record-as-it-edges-ever-closer-to-the-42-million-milestone-1656193/",
+      "published": "2025",
+      "kind": "secondary"
+    }
+  ]
+}
