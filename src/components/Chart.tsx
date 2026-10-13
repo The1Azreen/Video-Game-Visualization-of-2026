@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import * as echarts from "echarts/core";
 import { BarChart, LineChart } from "echarts/charts";
-import { GridComponent, LegendComponent, TooltipComponent, AriaComponent } from "echarts/components";
+import { GridComponent, LegendComponent, TooltipComponent, AriaComponent, MarkLineComponent } from "echarts/components";
 import { SVGRenderer } from "echarts/renderers";
 import type { EChartsCoreOption } from "echarts/core";
 import { useTokens, type Tokens } from "../theme";
 
-echarts.use([BarChart, LineChart, GridComponent, LegendComponent, TooltipComponent, AriaComponent, SVGRenderer]);
+echarts.use([BarChart, LineChart, GridComponent, LegendComponent, TooltipComponent, AriaComponent, MarkLineComponent, SVGRenderer]);
 
 export interface TableData {
   columns: string[];

@@ -5,7 +5,8 @@ import type { DomainFile, Observation } from "../data/schema";
 import { Chart } from "../components/Chart";
 import { Section, StatTile, SourceLink } from "../components/bits";
 import { LongView } from "./LongView";
-import { barItem, baseGrid, categoryAxis, legend, lineItem, tooltip, valueAxis } from "../charts";
+import { Waffle } from "../components/Waffle";
+import { barItem, baseGrid, categoryAxis, legend, tooltip, valueAxis } from "../charts";
 import type { Tokens } from "../theme";
 
 const fmtM = (v: number) => `${v.toFixed(2).replace(/\.?0+$/, "")}M`;
@@ -45,6 +46,7 @@ function Dashboard({ year, d }: { year: number; d: YearData }) {
   const usTotal = get(d.sales, "us_spend_total", "US", `${year}`);
   const usTotalPrev = get(d.sales, "us_spend_total", "US", `${year - 1}`);
   const usPhysical = get(d.sales, "us_physical_spend", "US", `${year}`);
+  const usMobile = get(d.sales, "us_mobile_spend", "US", `${year}`);
   const usContent = get(d.sales, "us_spend", "Content", `${year}`);
   const usHw = get(d.sales, "us_spend", "Hardware", `${year}`);
   const usHwPrev = get(d.sales, "us_spend", "Hardware", `${year - 1}`);
@@ -151,27 +153,63 @@ function Dashboard({ year, d }: { year: number; d: YearData }) {
     [d],
   );
 
-  const digitalOption = (entity: string) => (t: Tokens) => ({
-    grid: { ...baseGrid(), top: 12, right: 48 },
-    tooltip: { ...tooltip(t, d.sources, (v) => `${v}%`), axisPointer: { type: "line", lineStyle: { color: t.axis } } },
-    xAxis: { ...categoryAxis(t, qLabels), boundaryGap: false },
-    yAxis: { ...valueAxis(t, (v) => `${v}%`), min: 0, max: 100 },
+  // Physical share is the complement of the reported digital share, so it's derived.
+  const split = (entity: string) => {
+    const digital = series(d.sales, "digital_share_pct", entity, q);
+    const physical = digital.map((o): Observation | undefined =>
+      o && { ...o, value: Number((100 - o.value).toFixed(1)), confidence: "derived", note: "100% minus the reported digital share." },
+    );
+    return { digital, physical };
+  };
+  const psSplit = split("PlayStation");
+  const ninSplit = split("Nintendo");
+  const physicalWins = (s: ReturnType<typeof split>) => q.filter((_, i) => (s.physical[i]?.value ?? 0) > 50).map((p) => p.slice(5));
+
+  // Digital vs physical is a format comparison, not an entity one: digital takes
+  // the accent, physical the neutral, the same in every chart (and the waffle).
+  const splitOption = (s: ReturnType<typeof split>, digitalName: string) => (t: Tokens) => ({
+    grid: { ...baseGrid(), top: 40, right: 36 },
+    legend: { ...legend(t), data: [digitalName, "Physical"] },
+    tooltip: tooltip(t, d.sources, (v) => `${v}%`),
+    xAxis: categoryAxis(t, qLabels),
+    yAxis: { ...valueAxis(t, (v) => `${v}%`), max: 100 },
     series: [
       {
-        name: `${entity} digital share`,
-        type: "line",
-        color: t.entity(entity),
-        lineStyle: { width: 2 },
-        symbol: "circle",
-        symbolSize: 8,
-        itemStyle: { borderColor: t.surface, borderWidth: 2 },
-        data: series(d.sales, "digital_share_pct", entity, q).map(lineItem),
-        endLabel: { show: true, color: t.textSecondary, formatter: (p: { value: number }) => `${p.value}%` },
+        name: digitalName,
+        type: "bar",
+        stack: "format",
+        barMaxWidth: 44,
+        color: t.ramp[1],
+        itemStyle: { borderColor: t.surface, borderWidth: 1 },
+        data: s.digital.map((o) => barItem(t, o)),
+        label: { show: true, color: "#ffffff", fontWeight: 600, formatter: (p: { value: number }) => `${p.value}%` },
+        // 50% line: above it, physical outsold digital that quarter
+        markLine: {
+          silent: true,
+          z: 10,
+          symbol: "none",
+          lineStyle: { color: t.textPrimary, type: "solid", width: 1, opacity: 0.6 },
+          label: { show: true, position: "end", color: t.textSecondary, fontSize: 10, formatter: "50%" },
+          data: [{ yAxis: 50 }],
+        },
+      },
+      {
+        name: "Physical",
+        type: "bar",
+        stack: "format",
+        barMaxWidth: 44,
+        color: t.neutral,
+        itemStyle: { borderColor: t.surface, borderWidth: 1, borderRadius: [4, 4, 0, 0] },
+        data: s.physical.map((o) => ({ ...barItem(t, o), itemStyle: { decal: undefined } })),
+        label: { show: true, color: "#ffffff", formatter: (p: { value: number }) => `${p.value}%` },
       },
     ],
   });
-  const psDigitalOption = useCallback(digitalOption("PlayStation"), [d]);
-  const ninDigitalOption = useCallback(digitalOption("Nintendo"), [d]);
+  const psSplitOption = useCallback(splitOption(psSplit, "Digital"), [d]);
+  const ninSplitOption = useCallback(splitOption(ninSplit, "Digital*"), [d]);
+  const ninPhysicalWins = physicalWins(ninSplit);
+  const psDigitalAvg = sum(psSplit.digital) / psSplit.digital.filter(Boolean).length;
+  const usDigital = usContent && usPhysical ? Number((usContent.value - usPhysical.value).toFixed(1)) : null;
 
   const usedSources = [...new Set([...d.consoles.observations, ...d.sales.observations, ...d.jobs.observations, ...d.context.observations, ...d.events].map((o) => o.sourceId))]
     .map((id) => d.sources.get(id)!)
@@ -268,28 +306,51 @@ function Dashboard({ year, d }: { year: number; d: YearData }) {
             {usHw && usHwPrev && (
               <StatTile label="US hardware" value={fmtB(usHw.value)} delta={`+${pctChange(usHwPrev.value, usHw.value).toFixed(0)}% vs ${year - 1}`} deltaTone="up" confidence={usHw.confidence} source={src(usHw)} />
             )}
-            {usPhysical && usContent && (
-              <StatTile label="Physical share of US content" value={`${((usPhysical.value / usContent.value) * 100).toFixed(1)}%`} detail={`${fmtB(usPhysical.value)} of ${fmtB(usContent.value)}`} confidence="derived" source={src(usPhysical)} />
-            )}
+            {usMobile && <StatTile label="US mobile game spending" value={fmtB(usMobile.value)} detail="Half of all US content spend" confidence={usMobile.confidence} source={src(usMobile)} />}
           </div>
         </div>
+        {usDigital !== null && usContent && usPhysical && (
+          <Waffle
+            title={`In the US, physical is now about ${Math.round((usPhysical.value / usContent.value) * 100)}¢ of every game-content dollar`}
+            subtitle={`US consumer spending on game content, ${year}. Each square is 1%.`}
+            parts={[
+              { label: "Digital*", value: Number(((usDigital / usContent.value) * 100).toFixed(1)), detail: `${fmtB(usDigital)} · content total minus physical`, tone: "accent" },
+              { label: "Physical (discs & cartridges)", value: Number(((usPhysical.value / usContent.value) * 100).toFixed(1)), detail: `${fmtB(usPhysical.value)} · record low, −11% vs ${year - 1}`, tone: "neutral" },
+            ]}
+            footnote={<>*Digital here also includes DLC, microtransactions, subscriptions and mobile games — everything in ESA/Circana's "content" except physical copies.</>}
+            confidence="derived"
+            source={src(usContent)}
+          />
+        )}
         <div className="pair">
           <Chart
-            title="PlayStation: digital share of full-game sales"
-            subtitle="Percent of PS4+PS5 full-game units sold as downloads"
-            height={220}
-            option={psDigitalOption}
-            table={{ columns: ["Quarter", "Digital %"], rows: series(d.sales, "digital_share_pct", "PlayStation", q).map((o, i) => [q[i], o?.value ?? "—"]) }}
+            title="PlayStation: digital vs physical"
+            subtitle={`Share of PS4+PS5 full-game units. Digital averaged ${psDigitalAvg.toFixed(0)}% in ${year}.`}
+            height={240}
+            option={psSplitOption}
+            table={{ columns: ["Quarter", "Digital %", "Physical % (derived)"], rows: q.map((p, i) => [p, psSplit.digital[i]?.value ?? "—", psSplit.physical[i]?.value ?? "—"]) }}
+            footnote="Full games only: Sony's ratio counts game units, so DLC and microtransactions are not included."
           />
           <Chart
-            title="Nintendo: digital share of software sales"
-            subtitle="Percent of software revenue (incl. add-ons and NSO)"
-            height={220}
-            option={ninDigitalOption}
-            table={{ columns: ["Quarter", "Digital %", "Digital sales (¥B)"], rows: q.map((p) => [p, get(d.sales, "digital_share_pct", "Nintendo", p)?.value ?? "—", get(d.sales, "digital_sales", "Nintendo", p)?.value ?? "—"]) }}
+            title="Nintendo: digital vs physical"
+            subtitle={
+              ninPhysicalWins.length
+                ? `Share of software sales. Physical outsold digital in ${ninPhysicalWins.join(", ")} as Switch 2 launched.`
+                : "Share of software sales."
+            }
+            height={240}
+            option={ninSplitOption}
+            table={{
+              columns: ["Quarter", "Digital* %", "Physical % (derived)", "Digital sales (¥B)"],
+              rows: q.map((p, i) => [p, ninSplit.digital[i]?.value ?? "—", ninSplit.physical[i]?.value ?? "—", get(d.sales, "digital_sales", "Nintendo", p)?.value ?? "—"]),
+            }}
+            footnote="*Digital also includes DLC/add-on content, microtransactions and Nintendo Switch Online. Measured by revenue (yen)."
           />
         </div>
-        <p className="note">{d.sales.notes} Holiday quarters dip because more physical copies are bought as gifts, and Switch 2's launch titles were heavily physical.</p>
+        <p className="note">
+          The two charts measure different things (units vs revenue, full games vs everything digital), so compare each company's trend rather than the two against each other. Holiday quarters lean physical
+          because more games are bought as gifts.
+        </p>
       </Section>
 
       <LongView d={d} />
