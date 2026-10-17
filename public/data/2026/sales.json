@@ -1,0 +1,16 @@
+{
+  "domain": "sales",
+  "lede": "Full-year spending totals aren't out until early 2027. So far, US spending is flat against 2025 and both console makers' digital shares are above their 2025 levels.",
+  "notes": "Sony's digital ratio counts full-game units (PS4 + PS5). Nintendo's counts value (yen) and includes add-ons and Nintendo Switch Online, so the two are not directly comparable.",
+  "observations": [
+    { "metric": "us_spend_total_h1", "entity": "US", "period": "2026", "value": 27.5, "unit": "USD B", "sourceId": "circana-h1-2026", "confidence": "reported", "note": "Jan–Jun 2026; about 1% behind the 2025 pace." },
+    { "metric": "us_content_h1", "entity": "US", "period": "2026", "value": 24.3, "unit": "USD B", "sourceId": "circana-h1-2026", "confidence": "reported", "note": "Jan–Jun 2026; flat vs 2025." },
+
+    { "metric": "digital_share_pct", "entity": "PlayStation", "period": "2026-Q1", "value": 85, "unit": "%", "sourceId": "sony-fy25q4-vgc", "confidence": "reported" },
+    { "metric": "digital_share_pct", "entity": "PlayStation", "period": "2026-Q2", "value": 82, "unit": "%", "sourceId": "sony-fy26q1", "confidence": "reported" },
+    { "metric": "digital_share_pct", "entity": "Nintendo", "period": "2026-Q1", "value": 67.2, "unit": "%", "sourceId": "nintendo-fy27q1", "confidence": "reported", "note": "Highest quarterly share Nintendo has reported." },
+    { "metric": "digital_share_pct", "entity": "Nintendo", "period": "2026-Q2", "value": 61.5, "unit": "%", "sourceId": "nintendo-fy27q1", "confidence": "reported" },
+    { "metric": "digital_sales", "entity": "Nintendo", "period": "2026-Q1", "value": 125.6, "unit": "JPY B", "sourceId": "nintendo-fy27q1", "confidence": "reported" },
+    { "metric": "digital_sales", "entity": "Nintendo", "period": "2026-Q2", "value": 132.7, "unit": "JPY B", "sourceId": "nintendo-fy27q1", "confidence": "reported", "note": "+90% year over year." }
+  ]
+}

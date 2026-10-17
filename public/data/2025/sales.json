@@ -1,5 +1,6 @@
 {
   "domain": "sales",
+  "lede": "Spending hit a record, but the money is in mobile, PC and subscriptions. US physical game sales fell to their lowest level since tracking began.",
   "notes": "Sony's digital ratio counts full-game units (PS4 + PS5). Nintendo's counts value (yen) and includes add-ons and Nintendo Switch Online, so the two are not directly comparable.",
   "observations": [
     { "metric": "global_content_spend", "entity": "Global", "period": "2025", "value": 195.6, "unit": "USD B", "sourceId": "ball-2026", "confidence": "estimate", "note": "+5.3% YoY; third straight year of growth." },

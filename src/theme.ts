@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 // Color follows the entity, never its rank: every chart looks colors up here,
-// so "PS5 is blue" holds across the whole dashboard. Slots 1-3 of the reference
-// palette are validated all-pairs (light + dark); Xbox only ever appears alone.
+// so "PS5 is teal" holds across the whole dashboard. The palette is the
+// the1azreen.neocities.org one: teal, magenta, yellow and mint on indigo.
 export const ENTITY_TOKEN: Record<string, string> = {
   PS5: "--series-1",
   PlayStation: "--series-1",
@@ -12,6 +12,8 @@ export const ENTITY_TOKEN: Record<string, string> = {
   Xbox: "--series-7",
   Steam: "--series-1",
 };
+
+export const FONT = '"pixelmplus12", "MS Gothic", ui-monospace, monospace';
 
 export interface Tokens {
   surface: string;
@@ -24,6 +26,9 @@ export interface Tokens {
   ramp: [string, string, string];
   neutral: string;
   negative: string;
+  /** Text color that reads on top of an accent (teal) fill. */
+  onAccent: string;
+  font: string;
   entity: (name: string) => string;
 }
 
@@ -31,55 +36,41 @@ export function readTokens(): Tokens {
   const css = getComputedStyle(document.documentElement);
   const v = (name: string) => css.getPropertyValue(name).trim();
   return {
-    surface: v("--surface-1"),
-    textPrimary: v("--text-primary"),
-    textSecondary: v("--text-secondary"),
-    muted: v("--text-muted"),
-    grid: v("--grid"),
-    axis: v("--axis"),
+    surface: v("--ink"),
+    textPrimary: v("--yellow"),
+    textSecondary: v("--text"),
+    muted: v("--muted"),
+    grid: v("--inactive"),
+    axis: v("--outer"),
     ramp: [v("--ramp-1"), v("--ramp-2"), v("--ramp-3")],
     neutral: v("--neutral"),
-    negative: v("--negative"),
+    negative: v("--bad"),
+    onAccent: v("--back"),
+    font: FONT,
     entity: (name) => v(ENTITY_TOKEN[name] ?? "--series-1"),
   };
 }
 
-export type ThemeChoice = "system" | "light" | "dark";
-
-/** Re-reads tokens whenever the OS scheme or the in-page toggle changes. */
+/** Single theme, so the tokens only need reading once. */
 export function useTokens(): Tokens {
-  const [tokens, setTokens] = useState(readTokens);
-  useEffect(() => {
-    const update = () => setTokens(readTokens());
-    const mq = window.matchMedia("(prefers-color-scheme: dark)");
-    mq.addEventListener("change", update);
-    const mo = new MutationObserver(update);
-    mo.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
-    return () => {
-      mq.removeEventListener("change", update);
-      mo.disconnect();
-    };
-  }, []);
+  const [tokens] = useState(readTokens);
   return tokens;
 }
 
-export function applyTheme(choice: ThemeChoice) {
-  const root = document.documentElement;
-  if (choice === "system") root.removeAttribute("data-theme");
-  else root.setAttribute("data-theme", choice);
+/** The scrolling night-sky background, as on the reference site. Off by default; remembered per browser. */
+export function savedSky(): boolean {
   try {
-    localStorage.setItem("theme", choice);
+    return localStorage.getItem("sky") === "on";
   } catch {
-    /* storage unavailable: theme just won't persist */
+    return false;
   }
 }
 
-export function savedTheme(): ThemeChoice {
+export function applySky(on: boolean) {
+  document.body.classList.toggle("sky-anim", on);
   try {
-    const t = localStorage.getItem("theme");
-    if (t === "light" || t === "dark") return t;
+    localStorage.setItem("sky", on ? "on" : "off");
   } catch {
-    /* ignore */
+    /* storage unavailable: the setting just won't persist */
   }
-  return "system";
 }

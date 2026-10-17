@@ -196,6 +196,137 @@
       "url": "https://www.gamereactor.eu/steam-sets-another-all-time-concurrent-user-record-as-it-edges-ever-closer-to-the-42-million-milestone-1656193/",
       "published": "2025",
       "kind": "secondary"
+    },
+    {
+      "id": "nintendo-fy27q1",
+      "publisher": "Nintendo IR",
+      "title": "Financial results explanatory material, 1st quarter of fiscal year ending March 2027",
+      "url": "https://www.nintendo.co.jp/ir/pdf/2026/260806_2e.pdf",
+      "published": "2026-08-06",
+      "kind": "primary",
+      "note": "Quarterly hardware, software and digital-sales charts cover FY26 Q1 through FY27 Q1 (Apr 2025–Jun 2026)."
+    },
+    {
+      "id": "sony-fy25q4-vgc",
+      "publisher": "VGChartz (Sony FY25 Q4 results)",
+      "title": "PS5 ships 93.7 million units as of March 2026",
+      "url": "https://www.vgchartz.com/article/467765/ps5-ships-937-million-units-as-of-march-2026/",
+      "published": "2026-05-07",
+      "kind": "secondary"
+    },
+    {
+      "id": "sony-fy26q1",
+      "publisher": "VGChartz (Sony FY26 Q1 results)",
+      "title": "PS5 ships 95.3 million units as of June 2026",
+      "url": "https://www.vgchartz.com/article/468622/ps5-ships-953-million-units-as-of-june-2026/",
+      "published": "2026-07-30",
+      "kind": "secondary"
+    },
+    {
+      "id": "ms-fy26q3",
+      "publisher": "Microsoft Investor Relations",
+      "title": "FY26 Q3 More Personal Computing performance",
+      "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q3/more-personal-computing-performance",
+      "published": "2026-04-29",
+      "kind": "primary"
+    },
+    {
+      "id": "ms-fy26q4",
+      "publisher": "Microsoft (SEC 8-K, exhibit 99.1)",
+      "title": "FY26 Q4 earnings press release",
+      "url": "https://www.sec.gov/Archives/edgar/data/0000789019/000119312526323632/msft-ex99_1.htm",
+      "published": "2026-07-29",
+      "kind": "primary"
+    },
+    {
+      "id": "ms-fy26q4-hw",
+      "publisher": "PlayDay (Microsoft FY26 Q4)",
+      "title": "Xbox revenue and hardware decline for the third straight quarter",
+      "url": "https://playday.one/2026/07/29/xbox-revenue-and-hardware-decline-for-the-third-straight-quarter-fy26-q4-results/",
+      "published": "2026-07-29",
+      "kind": "secondary",
+      "note": "The press release gives content & services only; the hardware change comes from earnings-call coverage."
+    },
+    {
+      "id": "circana-h1-2026",
+      "publisher": "Game Informer (Circana data)",
+      "title": "June 2026 US spending falls 21%; first half at $27.5B",
+      "url": "https://gameinformer.com/2026/07/22/ea-sports-ufc-6-leads-game-sales-for-june-a-month-where-spending-fell-21-compared-to",
+      "published": "2026-07-22",
+      "kind": "secondary"
+    },
+    {
+      "id": "asgc-2026",
+      "publisher": "Inven Global (ASGC tracker data)",
+      "title": "Five years post-pandemic, 57,000 games industry jobs have vanished",
+      "url": "https://www.invenglobal.com/articles/27176/five-years-post-pandemic-57000-games-industry-jobs-have-vanished",
+      "published": "2026-10-14",
+      "kind": "secondary"
+    },
+    {
+      "id": "asgc-tracker",
+      "publisher": "ASGC Games Industry Layoffs Tracker (Amir Satvat)",
+      "title": "2026 layoffs and full-year projection",
+      "url": "https://layoffs.asgc.gg/",
+      "published": "2026-09-28",
+      "kind": "primary",
+      "note": "Live tracker; the projection quoted is from its Sep 28, 2026 update."
+    },
+    {
+      "id": "steam-42m-2026",
+      "publisher": "Notebookcheck (SteamDB data)",
+      "title": "Steam sets a new all-time concurrent player record after surpassing 42 million users",
+      "url": "https://www.notebookcheck.net/Steam-sets-a-new-all-time-concurrent-player-record-after-surpassing-42-million-users-online.1201788.0.html",
+      "published": "2026-01",
+      "kind": "secondary"
+    },
+    {
+      "id": "steam-43m-2026",
+      "publisher": "Dot Esports (SteamDB data)",
+      "title": "Steam hits a record 43.5 million concurrent users",
+      "url": "https://dotesports.com/general/news/steam-all-time-record-43-5-million-concurrent-users",
+      "published": "2026-10",
+      "kind": "secondary"
+    },
+    {
+      "id": "epic-layoffs-2026",
+      "publisher": "Bloomberg Law",
+      "title": "Epic Games cuts about 1,000 jobs amid Fortnite slump",
+      "url": "https://news.bloomberglaw.com/daily-labor-report/epic-games-cuts-about-1-000-jobs-amid-fortnite-slump-1",
+      "published": "2026-03-24",
+      "kind": "secondary"
+    },
+    {
+      "id": "ps5-price-2026",
+      "publisher": "Shacknews",
+      "title": "Sony raises prices on all PS5 consoles",
+      "url": "https://www.shacknews.com/article/148501/sony-ps5-price-hike-march-2026",
+      "published": "2026-03-27",
+      "kind": "secondary"
+    },
+    {
+      "id": "switch2-price-2026",
+      "publisher": "Game Informer",
+      "title": "The Switch 2 is getting a price increase",
+      "url": "https://gameinformer.com/2026/05/08/the-switch-2-is-getting-a-price-increase",
+      "published": "2026-05-08",
+      "kind": "secondary"
+    },
+    {
+      "id": "ms-layoffs-2026",
+      "publisher": "Insider Gaming",
+      "title": "Xbox July 2026 layoffs",
+      "url": "https://insider-gaming.com/xbox-july-2026-layoffs/",
+      "published": "2026-07",
+      "kind": "secondary"
+    },
+    {
+      "id": "gta6-price",
+      "publisher": "Push Square",
+      "title": "GTA 6 confirmed to be an $80 game",
+      "url": "https://www.pushsquare.com/news/2026/06/gta-6-confirmed-to-be-an-usd80-game",
+      "published": "2026-06",
+      "kind": "secondary"
     }
   ]
 }

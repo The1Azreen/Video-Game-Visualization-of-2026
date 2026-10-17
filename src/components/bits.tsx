@@ -1,12 +1,23 @@
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import type { Confidence, Source } from "../data/schema";
 
-export function Section({ id, title, lede, children }: { id: string; title: string; lede: ReactNode; children: ReactNode }) {
+/** A retro "window": title bar with a collapse button, lede, then content. */
+export function Section({ id, title, lede, children }: { id: string; title: string; lede?: ReactNode; children: ReactNode }) {
+  const [open, setOpen] = useState(true);
   return (
-    <section id={id} className="section">
-      <h2>{title}</h2>
-      <p className="lede">{lede}</p>
-      {children}
+    <section id={id} className={`window section${open ? "" : " collapsed"}`} aria-labelledby={`${id}-title`}>
+      <div className="title">
+        <h2 id={`${id}-title`}>{title}</h2>
+        <span className="tb">
+          <button type="button" aria-expanded={open} aria-controls={`${id}-body`} title={open ? "Minimize" : "Restore"} onClick={() => setOpen(!open)}>
+            {open ? "_" : "□"}
+          </button>
+        </span>
+      </div>
+      <div className="content" id={`${id}-body`}>
+        {lede && <p className="lede">{lede}</p>}
+        {children}
+      </div>
     </section>
   );
 }
@@ -16,6 +27,7 @@ export function StatTile({
   value,
   delta,
   deltaTone,
+  deltaBad,
   detail,
   confidence,
   source,
@@ -24,16 +36,19 @@ export function StatTile({
   value: string;
   delta?: string;
   deltaTone?: "up" | "down" | "neutral";
+  /** Color the delta as bad news regardless of direction (e.g. rising layoffs). */
+  deltaBad?: boolean;
   detail?: ReactNode;
   confidence: Confidence;
   source?: Source;
 }) {
+  const tone = deltaBad ? "bad" : deltaTone === "up" ? "good" : deltaTone === "down" ? "bad" : "";
   return (
-    <div className="card tile">
+    <div className="tile">
       <div className="tile-label">{label}</div>
       <div className="tile-value">{value}</div>
       {delta && (
-        <div className={`tile-delta ${deltaTone ?? "neutral"}`}>
+        <div className={`tile-delta ${tone}`}>
           <span aria-hidden>{deltaTone === "up" ? "▲" : deltaTone === "down" ? "▼" : "■"}</span> {delta}
         </div>
       )}

@@ -20,6 +20,8 @@ export type Observation = z.infer<typeof Observation>;
 
 export const DomainFile = z.object({
   domain: z.string(),
+  /** One-line summary shown under the section heading. */
+  lede: z.string().optional(),
   notes: z.string().optional(),
   observations: z.array(Observation),
 });
@@ -27,7 +29,7 @@ export type DomainFile = z.infer<typeof DomainFile>;
 
 export const IndustryEvent = z.object({
   date: z.string().regex(/^\d{4}-\d{2}(-\d{2})?$/),
-  category: z.enum(["platform", "pricing", "jobs", "deals"]),
+  category: z.enum(["platform", "pricing", "jobs", "deals", "release"]),
   title: z.string(),
   sourceId: z.string(),
 });

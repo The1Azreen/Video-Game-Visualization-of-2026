@@ -1,5 +1,6 @@
 {
   "domain": "jobs",
+  "lede": "Layoffs fell sharply from 2024's peak but stayed historically high, while studio funding dried up and more work shifted to outsourcers.",
   "notes": "Layoff totals differ by tracker methodology (announced cuts vs. surveyed estimates). Both trackers are shown rather than picking one.",
   "observations": [
     { "metric": "layoffs", "entity": "Satvat tracker", "period": "2024", "value": 15631, "unit": "people", "sourceId": "satvat-2025", "confidence": "estimate" },

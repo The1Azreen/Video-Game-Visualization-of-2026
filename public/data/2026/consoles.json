@@ -1,0 +1,31 @@
+{
+  "domain": "consoles",
+  "lede": "Year two of Switch 2 cooled after its record launch, PS5 had its weakest first half since launch after an April price rise, and Xbox hardware revenue kept falling.",
+  "notes": "Periods are calendar quarters. Sony and Nintendo fiscal years end in March, Microsoft's in June: 2026-Q1 = Sony FY25 Q4 / Nintendo FY26 Q4 / Microsoft FY26 Q3; 2026-Q2 = Sony FY26 Q1 / Nintendo FY27 Q1 / Microsoft FY26 Q4. Jul–Sep 2026 results are published from late October. Hardware units are sell-in (shipped to retail), not sell-through.",
+  "observations": [
+    { "metric": "hw_units", "entity": "PS5", "period": "2026-Q1", "value": 1.5, "unit": "M units", "sourceId": "sony-fy25q4-vgc", "confidence": "reported", "note": "Down 46% from 2.8M a year earlier." },
+    { "metric": "hw_units", "entity": "PS5", "period": "2026-Q2", "value": 1.6, "unit": "M units", "sourceId": "sony-fy26q1", "confidence": "reported", "note": "Down 36% from 2.5M a year earlier; first full quarter after the Apr 2 price rise." },
+
+    { "metric": "hw_units", "entity": "Switch 2", "period": "2026-Q1", "value": 2.49, "unit": "M units", "sourceId": "nintendo-fy27q1", "confidence": "reported" },
+    { "metric": "hw_units", "entity": "Switch 2", "period": "2026-Q2", "value": 3.82, "unit": "M units", "sourceId": "nintendo-fy27q1", "confidence": "reported", "note": "Down 34.4% from the 5.82M launch quarter." },
+
+    { "metric": "hw_units", "entity": "Switch", "period": "2026-Q1", "value": 0.56, "unit": "M units", "sourceId": "nintendo-fy27q1", "confidence": "reported" },
+    { "metric": "hw_units", "entity": "Switch", "period": "2026-Q2", "value": 0.66, "unit": "M units", "sourceId": "nintendo-fy27q1", "confidence": "reported", "note": "Down 31.8% year over year." },
+
+    { "metric": "sw_units", "entity": "Switch 2", "period": "2026-Q1", "value": 10.79, "unit": "M units", "sourceId": "nintendo-fy27q1", "confidence": "reported" },
+    { "metric": "sw_units", "entity": "Switch 2", "period": "2026-Q2", "value": 9.46, "unit": "M units", "sourceId": "nintendo-fy27q1", "confidence": "reported" },
+    { "metric": "sw_units", "entity": "Switch", "period": "2026-Q1", "value": 27.98, "unit": "M units", "sourceId": "nintendo-fy27q1", "confidence": "reported" },
+    { "metric": "sw_units", "entity": "Switch", "period": "2026-Q2", "value": 33.81, "unit": "M units", "sourceId": "nintendo-fy27q1", "confidence": "reported" },
+
+    { "metric": "installed_base", "entity": "PS5", "period": "2026-Q2", "value": 95.3, "unit": "M units", "sourceId": "sony-fy26q1", "confidence": "reported", "note": "Cumulative shipments as of Jun 30, 2026." },
+    { "metric": "installed_base", "entity": "Switch 2", "period": "2026-Q2", "value": 23.68, "unit": "M units", "sourceId": "nintendo-fy27q1", "confidence": "reported", "note": "Cumulative shipments as of Jun 30, 2026." },
+
+    { "metric": "rev_yoy_pct", "entity": "Xbox hardware", "period": "2026-Q1", "value": -33, "unit": "%", "sourceId": "ms-fy26q3", "confidence": "reported" },
+    { "metric": "rev_yoy_pct", "entity": "Xbox hardware", "period": "2026-Q2", "value": -13, "unit": "%", "sourceId": "ms-fy26q4-hw", "confidence": "reported" },
+    { "metric": "rev_yoy_pct", "entity": "Xbox content & services", "period": "2026-Q1", "value": -5, "unit": "%", "sourceId": "ms-fy26q3", "confidence": "reported" },
+    { "metric": "rev_yoy_pct", "entity": "Xbox content & services", "period": "2026-Q2", "value": -10, "unit": "%", "sourceId": "ms-fy26q4", "confidence": "reported" },
+
+    { "metric": "steam_peak_ccu", "entity": "Steam", "period": "2026-01", "value": 42.04, "unit": "M users", "sourceId": "steam-42m-2026", "confidence": "reported", "note": "Jan 11, 2026 (SteamDB); first time above 42M." },
+    { "metric": "steam_peak_ccu", "entity": "Steam", "period": "2026-10", "value": 43.51, "unit": "M users", "sourceId": "steam-43m-2026", "confidence": "reported", "note": "Oct 11, 2026 (SteamDB); 2026 high so far." }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "domain": "jobs",
+  "lede": "Layoffs climbed back up: by October 2026 the count had already passed all of 2025, driven by Epic's and Microsoft's cuts.",
+  "notes": "2026 figures are year-to-date from Amir Satvat's ASGC tracker, which updates weekly. 2022–2025 bars are Matthew Ball's yearly totals, as on the 2025 tab. Totals differ by tracker methodology.",
+  "observations": [
+    { "metric": "layoffs", "entity": "Ball / Epyllion", "period": "2022", "value": 8500, "unit": "people", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 17. Gross reported layoffs (Farhan Noor, Amir Satvat)." },
+    { "metric": "layoffs", "entity": "Ball / Epyllion", "period": "2023", "value": 10500, "unit": "people", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 17." },
+    { "metric": "layoffs", "entity": "Ball / Epyllion", "period": "2024", "value": 15650, "unit": "people", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 17. All-time high." },
+    { "metric": "layoffs", "entity": "Ball / Epyllion", "period": "2025", "value": 9200, "unit": "people", "sourceId": "ball-2026", "confidence": "estimate" },
+    { "metric": "layoffs", "entity": "Satvat tracker", "period": "2025", "value": 9053, "unit": "people", "sourceId": "satvat-2025", "confidence": "estimate" },
+    { "metric": "layoffs", "entity": "Satvat tracker", "period": "2026", "value": 10581, "unit": "people", "sourceId": "asgc-2026", "confidence": "estimate", "note": "Year to date: 132 cases as of Oct 10, 2026." },
+    { "metric": "layoffs_projection", "entity": "Satvat tracker", "period": "2026", "value": 13812, "unit": "people", "sourceId": "asgc-tracker", "confidence": "estimate", "note": "Full-year projection, Sep 28, 2026 update (the first 2026 forecast, in January, was 8,025)." },
+    { "metric": "layoffs_cumulative", "entity": "Satvat tracker", "period": "2022-2026", "value": 57640, "unit": "people", "sourceId": "asgc-2026", "confidence": "estimate", "note": "Projected through the end of 2026." }
+  ]
+}

@@ -2,7 +2,7 @@ import type { Observation, Source } from "./data/schema";
 import type { Tokens } from "./theme";
 
 // Shared ECharts building blocks so every chart has the same recessive chrome:
-// hairline solid grid, muted axis labels, no axis ticks.
+// hairline indigo grid, muted axis labels, no axis ticks, square pixel corners.
 
 export function baseGrid() {
   return { left: 8, right: 16, top: 36, bottom: 8, containLabel: true };
@@ -30,10 +30,10 @@ export function legend(t: Tokens) {
   return {
     top: 0,
     left: 0,
-    icon: "roundRect",
+    icon: "rect",
     itemWidth: 10,
     itemHeight: 10,
-    textStyle: { color: t.textSecondary },
+    textStyle: { color: t.textSecondary, fontFamily: t.font },
   };
 }
 
@@ -65,11 +65,12 @@ type TooltipParam = { seriesName: string; color: string; data: { value: number |
 export function tooltip(t: Tokens, sources: Map<string, Source>, fmt: (v: number) => string) {
   return {
     trigger: "axis",
-    axisPointer: { type: "shadow", shadowStyle: { color: t.grid + "66" } },
+    axisPointer: { type: "shadow", shadowStyle: { color: t.axis + "88" } },
     backgroundColor: t.surface,
-    borderColor: t.axis,
-    textStyle: { color: t.textPrimary, fontSize: 12 },
-    extraCssText: "box-shadow:0 4px 16px rgba(0,0,0,.12);border-radius:8px;max-width:320px;white-space:normal;",
+    borderColor: t.textPrimary,
+    borderWidth: 2,
+    textStyle: { color: t.textPrimary, fontSize: 13, fontFamily: t.font },
+    extraCssText: "box-shadow:4px 4px 0 #000;border-radius:0;max-width:320px;white-space:normal;",
     formatter: (params: TooltipParam[]) => {
       const rows = params
         .filter((p) => p.data?.value != null)
@@ -77,9 +78,9 @@ export function tooltip(t: Tokens, sources: Map<string, Source>, fmt: (v: number
           const o = p.data.obs;
           const src = o ? sources.get(o.sourceId) : undefined;
           return `<div style="margin-top:6px">
-            <span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:${p.color};margin-right:6px"></span>
+            <span style="display:inline-block;width:8px;height:8px;background:${p.color};margin-right:6px"></span>
             ${esc(p.seriesName)} <b style="float:right;margin-left:12px">${fmt(p.data.value!)}</b>
-            ${o ? `<div style="color:${t.muted};font-size:11px;margin-left:14px">${CONF_LABEL[o.confidence]} · ${esc(src?.publisher ?? o.sourceId)}${o.note ? `<br>${esc(o.note)}` : ""}</div>` : ""}
+            ${o ? `<div style="color:${t.textSecondary};opacity:.75;font-size:12px;margin-left:14px">${CONF_LABEL[o.confidence]} · ${esc(src?.publisher ?? o.sourceId)}${o.note ? `<br>${esc(o.note)}` : ""}</div>` : ""}
           </div>`;
         });
       return `<div style="font-weight:600">${esc(params[0]?.axisValueLabel ?? "")}</div>${rows.join("")}`;

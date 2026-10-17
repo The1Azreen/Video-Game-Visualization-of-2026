@@ -32,7 +32,7 @@ export function Waffle({
   const squares = parts.flatMap((p, i) => Array.from({ length: counts[i] }, () => p));
 
   return (
-    <figure className="card chart waffle-card">
+    <figure className="panel chart waffle-card">
       <header className="chart-head">
         <div>
           <h3>{title}</h3>

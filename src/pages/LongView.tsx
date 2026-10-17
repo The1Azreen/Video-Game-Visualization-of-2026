@@ -54,7 +54,7 @@ export function LongView({ d }: { d: YearData }) {
           barMaxWidth: 20,
           data: growth.map((o) => ({
             ...fill(t, o, o.value >= 0 ? t.ramp[1] : t.negative),
-            itemStyle: { color: o.value >= 0 ? t.ramp[1] : t.negative, borderRadius: o.value >= 0 ? [0, 4, 4, 0] : [4, 0, 0, 4] },
+            itemStyle: { color: o.value >= 0 ? t.ramp[1] : t.negative },
           })),
           label: { show: true, position: "right", color: t.textSecondary, formatter: (p: { value: number }) => fmtSignedB(p.value) },
         },
@@ -74,7 +74,7 @@ export function LongView({ d }: { d: YearData }) {
           name: "Real spend (2024 dollars)",
           type: "bar",
           barMaxWidth: 48,
-          data: realSpend.map((o) => ({ ...fill(t, o, o.period === "2024" ? t.ramp[1] : t.neutral), itemStyle: { color: o.period === "2024" ? t.ramp[1] : t.neutral, borderRadius: [4, 4, 0, 0] } })),
+          data: realSpend.map((o) => ({ ...fill(t, o, o.period === "2024" ? t.ramp[1] : t.neutral), itemStyle: { color: o.period === "2024" ? t.ramp[1] : t.neutral } })),
           label: { show: true, position: "top", color: t.textSecondary, formatter: (p: { value: number }) => `$${p.value}B` },
         },
       ],
@@ -107,7 +107,7 @@ export function LongView({ d }: { d: YearData }) {
           data: steamShare(e).map((o) => barItem(t, o)),
           label:
             e === "Released that year"
-              ? { show: true, color: "#0b0b0b", fontSize: 11, formatter: (p: { value: number }) => `${p.value}%` } // segment is always the lightest ramp step
+              ? { show: true, color: t.onAccent, fontSize: 12, formatter: (p: { value: number }) => `${p.value}%` } // segment is always the lightest ramp step
               : undefined,
         })),
       };
@@ -128,7 +128,7 @@ export function LongView({ d }: { d: YearData }) {
           barMaxWidth: 26,
           data: releases.map((o, i) => {
             const c = i === releases.length - 1 ? t.ramp[1] : t.neutral;
-            return { ...fill(t, o, c), itemStyle: { color: c, borderRadius: [4, 4, 0, 0] } };
+            return { ...fill(t, o, c), itemStyle: { color: c } };
           }),
           label: {
             show: true,
@@ -186,7 +186,7 @@ export function LongView({ d }: { d: YearData }) {
           barMaxWidth: 18,
           data: playtime.map((o) => {
             const c = o === newShare ? t.ramp[1] : t.neutral;
-            return { ...fill(t, o, c), itemStyle: { ...fill(t, o, c).itemStyle, borderRadius: [0, 4, 4, 0] } };
+            return { ...fill(t, o, c), itemStyle: { ...fill(t, o, c).itemStyle } };
           }),
           label: { show: true, position: "right", color: t.textSecondary, formatter: (p: { value: number }) => `${p.value}%` },
         },
@@ -208,9 +208,9 @@ export function LongView({ d }: { d: YearData }) {
           barMaxWidth: 36,
           data: hours.map((o) => {
             const c = o.entity === "Roblox" ? t.ramp[1] : t.neutral;
-            return { ...fill(t, o, c), itemStyle: { color: c, borderRadius: [4, 4, 0, 0] } };
+            return { ...fill(t, o, c), itemStyle: { color: c } };
           }),
-          label: { show: true, position: "top", color: t.textSecondary, fontSize: 11, formatter: (p: { value: number }) => `~${p.value}B` },
+          label: { show: true, position: "top", color: t.textSecondary, fontSize: 11, formatter: (p: { value: number }) => `≈${p.value}B` },
         },
       ],
     }),
@@ -226,7 +226,7 @@ export function LongView({ d }: { d: YearData }) {
     <Section
       id="long-view"
       title="The long view"
-      lede="Why 2025 felt the way it did: growth since 2011 came almost entirely from mobile, real spending has shrunk since 2021, and players keep returning to the same old games while new releases pile up."
+      lede={d.context.lede}
     >
       <div className="tiles">
         {newShare && <StatTile label="2023 playtime spent on new games" value={`${newShare.value}%`} detail="PC + PlayStation/Xbox, excl. annual sequels" confidence={newShare.confidence} source={src} />}
@@ -239,7 +239,7 @@ export function LongView({ d }: { d: YearData }) {
             source={src}
           />
         )}
-        {growth[0] && <StatTile label="Mobile's share of growth since 2011" value="~70%" detail={`+$${growth[0].value}B of new yearly spend`} confidence="estimate" source={src} />}
+        {growth[0] && <StatTile label="Mobile's share of growth since 2011" value="≈70%" detail={`+$${growth[0].value}B of new yearly spend`} confidence="estimate" source={src} />}
         {releases.at(-1) && <StatTile label="New games on Steam in 2024" value={fmtInt(releases.at(-1)!.value)} detail={`vs ${fmtInt(releases[0].value)} in ${releases[0].period}`} confidence="estimate" source={src} />}
       </div>
 
@@ -273,14 +273,14 @@ export function LongView({ d }: { d: YearData }) {
 
       <div className="pair">
         <Chart
-          title="More games on Steam every year…"
+          title="More games on Steam every year..."
           subtitle="New releases per year"
           height={240}
           option={releasesOption}
           table={table(releases, "Year", (o) => fmtInt(o.value))}
         />
         <Chart
-          title="…but players buy fewer of them"
+          title="...but players buy fewer of them"
           subtitle="Games bought or installed per monthly active user per year"
           height={240}
           option={perMauOption}
@@ -301,7 +301,7 @@ export function LongView({ d }: { d: YearData }) {
           subtitle="Monthly hours of engagement, billions. *PlayStation is a 2023 average."
           height={240}
           option={hoursOption}
-          table={table(hours, "Platform", (o) => `~${o.value}B`)}
+          table={table(hours, "Platform", (o) => `≈${o.value}B`)}
           footnote="Approximate: read from the slide's gridlines, which have no value labels."
         />
       </div>

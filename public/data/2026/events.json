@@ -1,0 +1,12 @@
+{
+  "domain": "events",
+  "events": [
+    { "date": "2026-01-11", "category": "platform", "title": "Steam passes 42M concurrent users for the first time", "sourceId": "steam-42m-2026" },
+    { "date": "2026-03-24", "category": "jobs", "title": "Epic Games cuts over 1,000 jobs, citing a Fortnite engagement slump", "sourceId": "epic-layoffs-2026" },
+    { "date": "2026-04-02", "category": "pricing", "title": "PS5 US prices rise again: PS5 $649.99, Digital $599.99, Pro $899.99", "sourceId": "ps5-price-2026" },
+    { "date": "2026-05-08", "category": "pricing", "title": "Nintendo announces Switch 2 rise to $499.99 (from $449.99), effective Sep 1", "sourceId": "switch2-price-2026" },
+    { "date": "2026-07-06", "category": "jobs", "title": "Microsoft cuts ~4,800 jobs company-wide; Xbox loses about 20% of its staff", "sourceId": "ms-layoffs-2026" },
+    { "date": "2026-10-11", "category": "platform", "title": "Steam sets a new record: 43.5M concurrent users", "sourceId": "steam-43m-2026" },
+    { "date": "2026-11-19", "category": "release", "title": "GTA VI scheduled to launch on PS5 and Xbox Series at $79.99", "sourceId": "gta6-price" }
+  ]
+}

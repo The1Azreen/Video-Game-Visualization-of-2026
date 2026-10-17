@@ -1,6 +1,6 @@
 {
   "years": [
     { "year": 2025, "status": "complete", "label": "2025", "asOf": "2026-10-12" },
-    { "year": 2026, "status": "planned", "label": "2026 (YTD)", "asOf": null }
+    { "year": 2026, "status": "in-progress", "label": "2026 YTD", "asOf": "2026-10-17" }
   ]
 }

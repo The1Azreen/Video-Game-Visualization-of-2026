@@ -1,5 +1,6 @@
 {
   "domain": "context",
+  "lede": "Why the industry feels the way it does: growth since 2011 came almost entirely from mobile, real spending has shrunk since 2021, and players keep returning to the same old games while new releases pile up.",
   "notes": "Long-run context transcribed from Matthew Ball / Epyllion, 'The State of Video Gaming in 2025' (deck last updated Feb 27, 2026). Values are the labels printed on each slide unless the note says otherwise.",
   "observations": [
     { "metric": "growth_since_2011", "entity": "Mobile", "period": "2011-2024", "value": 83, "unit": "USD B", "sourceId": "ball-2025", "confidence": "estimate", "note": "Slide 29. Mobile is ~70% of new spend since 2011 and 58% of the market (up from 32%)." },

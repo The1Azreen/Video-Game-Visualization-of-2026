@@ -42,25 +42,25 @@ export function Chart({ title, subtitle, height = 280, option, table, footnote }
   }, [view]);
 
   useEffect(() => {
-    chart.current?.setOption({ animationDuration: 300, ...option(tokens) }, true);
+    chart.current?.setOption({ animationDuration: 300, textStyle: { fontFamily: tokens.font }, ...option(tokens) }, true);
   }, [option, tokens, view]);
 
   return (
-    <figure className="card chart">
+    <figure className="panel chart">
       <header className="chart-head">
         <div>
           <h3>{title}</h3>
           {subtitle && <p className="sub">{subtitle}</p>}
         </div>
-        <div className="seg" role="group" aria-label="View">
-          <button aria-pressed={view === "chart"} onClick={() => setView("chart")}>Chart</button>
-          <button aria-pressed={view === "table"} onClick={() => setView("table")}>Table</button>
+        <div className="tabs" role="group" aria-label="View">
+          <button className="tab" aria-pressed={view === "chart"} onClick={() => setView("chart")}>Chart</button>
+          <button className="tab" aria-pressed={view === "table"} onClick={() => setView("table")}>Table</button>
         </div>
       </header>
       {/* Distinct keys so React never reuses the ECharts host element for the table:
           ECharts clears its host's contents on dispose, which would wipe the table. */}
       {view === "chart" ? (
-        <div key="chart" ref={el} style={{ height }} role="img" aria-label={title} />
+        <div key="chart" ref={el} className="plot" style={{ height }} role="img" aria-label={title} />
       ) : (
         <div key="table" className="table-wrap" style={{ minHeight: height }}>
           <table>
