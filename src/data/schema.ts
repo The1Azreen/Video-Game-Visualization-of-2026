@@ -8,6 +8,8 @@ export type Confidence = z.infer<typeof Confidence>;
 export const Observation = z.object({
   metric: z.string(),
   entity: z.string(),
+  /** Optional second dimension, e.g. the platform or genre within a generation. */
+  segment: z.string().optional(),
   // "2025", "2025-Q3", "2025-10", or a range like "2022-2025"
   period: z.string().regex(/^\d{4}(-Q[1-4]|-\d{2}|-\d{4})?$/),
   value: z.number(),

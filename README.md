@@ -39,6 +39,7 @@ A dashboard of the state of the games industry (jobs, console makers, and physic
 | **Jobs** | Layoffs by year 2022–2025 (8,500 → 10,500 → 15,650 → 9,200), layoffs by tracker, private funding (−55%), outsourcing share (35.5%) |
 | **Console makers** | Quarterly hardware shipments for PS5 / Switch 2 / Switch; Xbox hardware and content & services revenue change year over year; PS5 lifetime shipments; Steam peak concurrent users |
 | **Sales: physical vs digital** | Global spending by platform (mobile / console / PC); US spending (ESA/Circana); PlayStation and Nintendo digital share by quarter |
+| **Players** | Who plays, from the ESA's 2025 US survey: average age (36), ages of players, share of each generation that plays weekly, platforms by generation (mobile / PC / console / VR) and each generation's top three genres; plus spending by age: 18–24s' weekly spend (≈−25%, Circana), Gen X and Boomers spending under $100 a month (73% / 86%, BCG) and parents buying in-game items (54%) |
 | **The long view** | Context from Matthew Ball's *State of Video Gaming* decks: where growth since 2011 came from (mobile +$83B, handheld −$9B), inflation-adjusted spending (down 14% since 2021), Steam playtime by game age, Steam releases vs games bought per player, the 6.5% of 2023 playtime spent on new games, and Roblox engagement compared with other platforms |
 | **Timeline** | Key 2025 events: Switch 2 launch, Microsoft layoffs, console price increases, the EA buyout |
 | **Sources** | Every source cited, marked primary or secondary |
@@ -64,6 +65,7 @@ Stop the server with **Ctrl + C** in the terminal.
   - `years.json`: which tabs exist and their status (`complete` / `in-progress` / `planned`). An `in-progress` year shows the work-in-progress notice and year-to-date labels.
   - `sources.json`: every source, cited by `id`
   - `<year>/consoles.json`, `sales.json`, `jobs.json`, `context.json` (long-run context), `events.json`. Each domain file has a `lede` (the section summary) and `notes`.
+  - `<year>/players.json` (optional): player demographics. Its observations use `segment` for the second dimension (the platform or genre within a generation). A year without the file just has no Players section.
 - Every number is an *observation* with a `sourceId` and a `confidence`:
   - `reported`: stated in a filing or report
   - `estimate`: an analyst or tracker figure
@@ -83,6 +85,7 @@ Every source is listed in `public/data/sources.json` and in the dashboard's Sour
 
 - **Company reports:** Nintendo IR (the Aug 2026 explanatory material gives quarterly hardware, software and digital figures from Apr 2025 to Jun 2026), Microsoft IR and SEC filings, and Sony's results via press coverage.
 - **Market data:** ESA / Circana / Sensor Tower for US spending.
+- **Players:** the ESA's [*2025 Essential Facts*](https://www.theesa.com/wp-content/uploads/2025/06/2025-Essential-Facts-Booklet-05-30-25-RGB.pdf) (YouGov survey of 5,000 Americans, Feb 2025), BCG's [*Video Gaming Report 2026*](https://www.bcg.com/publications/2025/video-gaming-report-2026-next-era-of-growth) (global survey, Jul 2025) and Circana's age-group spending via VICE.
 - **Layoffs:** Amir Satvat's ASGC tracker (2025–2026), and Matthew Ball's yearly totals (2022–2025).
 - **Matthew Ball / Epyllion:** [*The State of Video Gaming in 2025*](https://www.matthewball.co/all/stateofvideogaming2025) (231 slides, updated Feb 2026) and the 2026 edition. Figures are transcribed from slide labels, and each data point's note gives its slide number. The one chart whose values were read from gridlines (monthly engagement hours) is marked as approximate. The 2026 tab reuses this long-run context until the next deck.
 

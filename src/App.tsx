@@ -33,6 +33,13 @@ const ICONS: Record<string, ReactNode> = {
       <path fill="#8a6d17" d="M7 4h2v1h2v1H7v1h4v4H9v1H7v-1H5v-1h4V9H5V5h2z" />
     </>
   ),
+  players: (
+    <>
+      <path fill="#F7C948" d="M5 1h3v1h1v3H8v1H5V5H4V2h1z" />
+      <path fill="#6DE0F6" d="M3 7h7v1h1v4H9v3H4v-3H2V8h1z" />
+      <path fill="#FF6FF2" d="M11 4h2v1h1v2h-1v1h-2V7h-1V5h1zM11 9h3v1h1v3h-1v2h-3z" />
+    </>
+  ),
   "long-view": (
     <>
       <path fill="#fff" d="M1 1h1v13h13v1H1z" />
@@ -81,6 +88,7 @@ const SECTIONS = [
   ["jobs", "Jobs"],
   ["consoles", "Consoles"],
   ["sales", "Sales"],
+  ["players", "Players"],
   ["long-view", "Long view"],
   ["timeline", "Timeline"],
   ["sources", "Sources"],

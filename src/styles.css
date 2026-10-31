@@ -267,6 +267,20 @@ td { color: #fff; }
 .waffle-card .foot { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: center; }
 .waffle-card .tile-meta { padding-top: 0; margin-top: 0; }
 
+/* ---------- genres by generation (Players) ---------- */
+.genre-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr)); gap: 8px; }
+.genre-card { background: var(--ink); border: 2px solid var(--outer); padding: 8px 10px; min-width: 0; }
+.genre-gen { color: var(--yellow); font-weight: 700; margin-bottom: 6px; }
+.genre-gen .dim { color: #fff; font-weight: 400; font-size: 12px; }
+.genre-card ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.genre-card li { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; font-size: 13px; color: #fff; }
+.genre-bar { grid-column: 1 / -1; height: 8px; background: var(--outer); order: 3; }
+.genre-bar span { display: block; height: 100%; background: var(--ramp-2); }
+.genre-pct { color: var(--yellow); font-variant-numeric: tabular-nums; }
+.genres .foot { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: center; }
+.genres .tile-meta { padding-top: 0; margin-top: 0; }
+.sub-head { font-size: 15px; color: var(--teal); margin: 4px 0 8px; }
+
 /* ---------- taskbar ---------- */
 #taskbar {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;

@@ -116,6 +116,33 @@
       "note": "Restated March 2026: total $60.8B, content $52.4B."
     },
     {
+      "id": "esa-facts-2025",
+      "publisher": "ESA",
+      "title": "2025 Essential Facts About the U.S. Video Game Industry",
+      "url": "https://www.theesa.com/wp-content/uploads/2025/06/2025-Essential-Facts-Booklet-05-30-25-RGB.pdf",
+      "published": "2025-06-03",
+      "kind": "primary",
+      "note": "YouGov online survey of 5,000 Americans (4,000 players), Feb 11–25, 2025, weighted to the US population. Generation, platform and genre figures read from pages 8, 12 and 16."
+    },
+    {
+      "id": "bcg-gaming-2026",
+      "publisher": "BCG",
+      "title": "Video Gaming Report 2026: How Platforms Are Colliding",
+      "url": "https://www.bcg.com/publications/2025/video-gaming-report-2026-next-era-of-growth",
+      "published": "2025-12-09",
+      "kind": "primary",
+      "note": "Global Gaming Survey of 2,972 gamers (22% US), fieldwork by Dynata, Jul 9–18, 2025."
+    },
+    {
+      "id": "vice-circana-genz",
+      "publisher": "VICE (Circana data)",
+      "title": "Gen Z is cutting back on video game purchases",
+      "url": "https://www.vice.com/en/article/gen-z-is-cutting-back-on-video-game-purchases-like-really-cutting-back/",
+      "published": "2025-07-01",
+      "kind": "secondary",
+      "note": "Reports Circana analyst Mat Piscatella's figures, first covered by the Wall Street Journal."
+    },
+    {
       "id": "circana-physical",
       "publisher": "Push Square (Circana data)",
       "title": "Physical game sales hit all-time low in the US",

@@ -11,6 +11,11 @@ export const ENTITY_TOKEN: Record<string, string> = {
   Switch: "--series-3",
   Xbox: "--series-7",
   Steam: "--series-1",
+  // Platforms (Players section): PC shares Steam's teal.
+  PC: "--series-1",
+  Mobile: "--series-2",
+  Console: "--series-3",
+  VR: "--series-7",
 };
 
 export const FONT = '"pixelmplus12", "MS Gothic", ui-monospace, monospace';

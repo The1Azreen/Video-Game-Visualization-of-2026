@@ -5,6 +5,7 @@ import type { DomainFile, Observation, YearEntry } from "../data/schema";
 import { Chart } from "../components/Chart";
 import { Section, StatTile, SourceLink } from "../components/bits";
 import { LongView } from "./LongView";
+import { Players } from "./Players";
 import { Waffle } from "../components/Waffle";
 import { barItem, baseGrid, categoryAxis, legend, tooltip, valueAxis } from "../charts";
 import type { Tokens } from "../theme";
@@ -288,7 +289,7 @@ function Dashboard({ entry, d }: { entry: YearEntry; d: YearData }) {
     </>
   );
 
-  const usedSources = [...new Set([...d.consoles.observations, ...d.sales.observations, ...d.jobs.observations, ...d.context.observations, ...d.events].map((o) => o.sourceId))]
+  const usedSources = [...new Set([...d.consoles.observations, ...d.sales.observations, ...d.jobs.observations, ...d.context.observations, ...(d.players?.observations ?? []), ...d.events].map((o) => o.sourceId))]
     .map((id) => d.sources.get(id)!)
     .sort((a, b) => a.publisher.localeCompare(b.publisher));
 
@@ -465,6 +466,8 @@ function Dashboard({ entry, d }: { entry: YearEntry; d: YearData }) {
           because more games are bought as gifts.
         </p>
       </Section>
+
+      {d.players && <Players players={d.players} sources={d.sources} />}
 
       <LongView d={d} />
 
